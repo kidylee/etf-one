@@ -1,0 +1,15 @@
+development:
+  - name: Bitcoin
+    symbol: BTC
+  - name: Ethereum
+    symbol: ETH
+test:
+  - name: Bitcoin
+    symbol: BTC
+  - name: Ethereum
+    symbol: ETH
+production:
+  - name: Bitcoin
+    symbol: BTC
+  - name: Ethereum
+    symbol: ETH
