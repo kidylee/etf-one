@@ -33,7 +33,8 @@ gem 'jbuilder', '~> 2.5'
 # gem 'capistrano-rails', group: :development
 
 gem 'bootstrap-sass'
-
+gem 'devise'
+gem 'omniauth-github'
 
 group :development, :test do
   # Use sqlite3 as the database for Active Record
