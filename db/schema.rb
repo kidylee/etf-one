@@ -10,14 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171101212243) do
+ActiveRecord::Schema.define(version: 20171102204751) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "assets", force: :cascade do |t|
     t.string "symbol"
-    t.decimal "amount", precision: 18, scale: 18
+    t.decimal "amount", precision: 36, scale: 18
     t.string "address"
     t.bigint "user_id"
     t.datetime "created_at", null: false
