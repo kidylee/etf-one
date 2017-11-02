@@ -31,7 +31,7 @@ gem 'jbuilder', '~> 2.5'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
-
+gem 'pg'
 gem 'bootstrap-sass'
 gem 'devise'
 gem 'omniauth-github'
@@ -62,8 +62,9 @@ group :test do
   gem 'guard-minitest'
 end
 
+ 
+
 group :production do
-  gem 'pg'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
