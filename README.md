@@ -8,6 +8,12 @@ To get started with the app, clone the repo and then install the needed gems:
 $ bundle install --without production
 ```
 
+Start postgresql if using C9 
+
+```
+$ sudo service postgresql start
+```
+
 Next, migrate the database:
 
 ```

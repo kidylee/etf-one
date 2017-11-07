@@ -3,7 +3,7 @@ class AccountController < ApplicationController
   
   def index
     @assets = Hash.new
-     current_user.assets.map do |x|  
+    current_user.assets.map do |x|  
       @assets[x.symbol] = x.amount
     end
     
