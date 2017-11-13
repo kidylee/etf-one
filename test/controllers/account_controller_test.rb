@@ -15,6 +15,7 @@ class AccountControllerTest < ActionDispatch::IntegrationTest
     sign_in User.new(email: "test@example.org",password:  "123greetings")
     get account_url
     assert_response :success
+    assert_template 'account/index'
   end
 
 end

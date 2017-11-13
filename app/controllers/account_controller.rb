@@ -8,4 +8,8 @@ class AccountController < ApplicationController
     end
     
   end
+  
+  def adjust
+    
+  end
 end

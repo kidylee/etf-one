@@ -1,0 +1,25 @@
+<h1>Asset Histories</h1>
+<h3><%= @user.email %></h3>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>Asset</th>
+      <th>Amount</th>
+      <th>Action</th>
+      <th>Time</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @asset_histories.each do |asset_history| %>
+      <tr>
+        <td><%= asset_history.asset_type %></td>
+        <td><%= asset_history.amount %></td>
+        <td><%= AssetHistory.action_types[asset_history.action_type] %></td>
+        <td><%= asset_history.created_at %></td>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+

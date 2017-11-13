@@ -61,7 +61,11 @@ p {
 
 
 /* header */
-
+.dropdown{
+  .dropdown-menu{
+    background: #333;
+  }
+}
 #logo {
   float: left;
   margin-right: 10px;
@@ -138,4 +142,9 @@ input {
 #session_remember_me {
   width: auto;
   margin-left: 0;
+}
+
+.session_links{
+  margin-top: 0.5em;
+  display: inline-block;
 }

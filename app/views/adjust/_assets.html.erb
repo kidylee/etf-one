@@ -1,10 +1,12 @@
-<h3>Account Summary</h3>
+
+
+<h1>Account Summary</h1>
 <table class="table table-bordered">
     <thead>
       <tr>
         <th>Asset</th>
         <th>Amount</th>
-        <th>Address</th>
+        <th>Action</th>
       </tr>
     </thead>
     <tbody>
@@ -12,7 +14,7 @@
       <tr>
         <td><%= a['symbol'] %></td>
         <td><%= @assets[a['symbol']] || 0  %></td>
-        <td>Address</td>
+        <td><%= link_to "change", adjust_show_path(email: @user.email, asset: a['symbol']) %></td>
       </tr>
       <% end %>
       

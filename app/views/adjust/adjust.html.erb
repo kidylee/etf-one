@@ -1,0 +1,21 @@
+<h3>Adjust Amount</h3>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for :asset_history, url: adjust_create_path do |f| %>
+      
+      <%= f.label :user_email %><br />
+      <%= f.email_field :user_email,  class: 'form-control',value: @user.email, readonly: true %>
+      
+    
+      
+      <%= f.label :asset_type %><br />
+      <%= f.text_field :asset_type, class: 'form-control', value: params[:asset], readonly: true %>
+
+      <%= f.label :amount %><br />
+      <%= f.number_field :amount,autofocus: true, step: :any, class: 'form-control' %>
+
+      <%= f.submit "Submit" ,class: "btn btn-primary"%>
+      
+    <% end %>
+  </div>
+</div>

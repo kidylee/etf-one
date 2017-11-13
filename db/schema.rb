@@ -10,10 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171106210732) do
+ActiveRecord::Schema.define(version: 20171109192155) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "asset_histories", force: :cascade do |t|
+    t.string "asset_type"
+    t.decimal "amount", precision: 36, scale: 18
+    t.string "action_type"
+    t.string "created_by"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["asset_type"], name: "index_asset_histories_on_asset_type"
+    t.index ["user_id"], name: "index_asset_histories_on_user_id"
+  end
 
   create_table "assets", force: :cascade do |t|
     t.string "symbol"
@@ -22,6 +34,7 @@ ActiveRecord::Schema.define(version: 20171106210732) do
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["symbol", "user_id"], name: "index_assets_on_symbol_and_user_id", unique: true
     t.index ["user_id"], name: "index_assets_on_user_id"
   end
 
@@ -45,5 +58,6 @@ ActiveRecord::Schema.define(version: 20171106210732) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "asset_histories", "users"
   add_foreign_key "assets", "users"
 end

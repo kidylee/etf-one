@@ -5,9 +5,15 @@ class Ability
     
     user ||= User.new # guest user (not logged in)
     
-    can :index, :account if user.valid?
+    if user.valid?
+      can :index, :account 
+      can :index, AssetHistory
+    end
     
     
+   
+    can :manage, :adjust  if user.admin?
+
   
     # Define abilities for the passed in user here. For example:
     #
