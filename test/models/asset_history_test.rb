@@ -21,7 +21,7 @@ class AssetHistoryTest < ActiveSupport::TestCase
    test "valid action type with created by" do
     one = users(:one)
 
-    @his = AssetHistory.new(action_type: :deposit, user_id: one.id, asset_type: "BTC", amount: "0986097608768769876989797996968676586587576576578658765")
+    @his = AssetHistory.new(action_type: :deposit, user_id: one.id, asset_type: "BTC", amount: "0986097608")
 
     assert @his.valid?
   end
