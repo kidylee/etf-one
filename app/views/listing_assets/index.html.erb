@@ -1,0 +1,23 @@
+<h1>Listing Assets</h1>
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @listing_assets.each do |listing_asset| %>
+      <tr>
+        <td><%= listing_asset.name %></td>
+        <td><%= link_to 'Show', listing_asset %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= button_to 'New Listing Asset', new_listing_asset_path, class: "btn btn-primary", method: :get %>

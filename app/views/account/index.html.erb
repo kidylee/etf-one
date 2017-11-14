@@ -8,10 +8,10 @@
       </tr>
     </thead>
     <tbody>
-      <% Rails.configuration.listing_assets.each do |a| %>
+      <% ListingAsset.all.each do |a| %>
       <tr>
-        <td><%= a['symbol'] %></td>
-        <td><%= @assets[a['symbol']] || 0  %></td>
+        <td><%= a.name %></td>
+        <td><%= @assets[a.name] || 0  %></td>
         <td>Address</td>
       </tr>
       <% end %>

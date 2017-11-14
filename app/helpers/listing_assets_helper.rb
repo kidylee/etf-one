@@ -1,0 +1,2 @@
+module ListingAssetsHelper
+end

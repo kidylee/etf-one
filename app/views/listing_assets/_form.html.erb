@@ -1,0 +1,22 @@
+<%= form_with(model: listing_asset, local: true) do |form| %>
+  <% if listing_asset.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(listing_asset.errors.count, "error") %> prohibited this listing_asset from being saved:</h2>
+
+      <ul>
+      <% listing_asset.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name, id: :listing_asset_name ,class: 'form-control'%>
+  </div>
+
+  <div class="actions">
+    <%= form.submit "Submit", class: "btn btn-primary" %>
+  </div>
+<% end %>

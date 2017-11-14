@@ -11,8 +11,10 @@ class Ability
     end
     
     
-   
-    can :manage, :adjust  if user.admin?
+    if user.admin?
+      can :manage, :adjust  
+      can :manage, ListingAsset
+    end
 
   
     # Define abilities for the passed in user here. For example:

@@ -1,0 +1,2 @@
+class ListingAsset < ApplicationRecord
+end

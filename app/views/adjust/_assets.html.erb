@@ -10,10 +10,10 @@
       </tr>
     </thead>
     <tbody>
-      <% Rails.configuration.listing_assets.each do |a| %>
+      <% ListingAsset.all.each do |a| %>
       <tr>
-        <td><%= a['symbol'] %></td>
-        <td><%= @assets[a['symbol']] || 0  %></td>
+        <td><%= a.name %></td>
+        <td><%= @assets[a.name] || 0  %></td>
         <td><%= link_to "change", adjust_show_path(email: @user.email, asset: a['symbol']) %></td>
       </tr>
       <% end %>
